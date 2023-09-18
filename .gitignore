@@ -1,0 +1,9 @@
+.env
+
+# Jupyter
+**/.Trash-0/
+**/.ipynb*/
+
+# Python
+**/__pycache__/
+*.py[cod]

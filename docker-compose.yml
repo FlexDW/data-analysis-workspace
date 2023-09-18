@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/jupyter/data
+      - ./libs:/jupyter/libs
+      - ./notebooks:/jupyter/notebooks
+    ports:
+      - 8888:8888
+    working_dir: /jupyter
+    environment:
+      - PYTHONPATH=/jupyter
+    entrypoint: ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--no-browser"]
